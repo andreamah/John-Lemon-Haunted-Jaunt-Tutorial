@@ -173,11 +173,31 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 459728940}
     - target: {fileID: 4141797368142181008, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4908233667435714686, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 4908233667435714686, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 459728940}
     - target: {fileID: 5137004586402551950, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: player
@@ -253,6 +273,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5248091208905784028, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -273,6 +298,21 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 57972547}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: wanderRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 6705452138019950148, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916e59c8fca4e974382a6614b7f597f9, type: 3}
 --- !u!1001 &73364224
@@ -1720,6 +1760,16 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 459728940}
     - target: {fileID: 4141797368142181008, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1800,6 +1850,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5248091208905784028, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -1830,6 +1885,21 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1669877093}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: wanderRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 6705452138019950148, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916e59c8fca4e974382a6614b7f597f9, type: 3}
 --- !u!1 &1598707169
@@ -5481,11 +5551,31 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 459728940}
     - target: {fileID: 4141797368142181008, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4908233667435714686, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 4908233667435714686, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 459728940}
     - target: {fileID: 5137004586402551950, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: player
@@ -5581,6 +5671,21 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 2026249063}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: wanderRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 6705452138019950148, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916e59c8fca4e974382a6614b7f597f9, type: 3}
 --- !u!1 &1990760302
@@ -5830,16 +5935,26 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2097583595}
-    - target: {fileID: 534978794425171557, guid: 916e59c8fca4e974382a6614b7f597f9,
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
-      propertyPath: m_Speed
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4141797368142181008, guid: 916e59c8fca4e974382a6614b7f597f9,
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 3659748711926460947, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 459728940}
+    - target: {fileID: 4908233667435714686, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
+    - target: {fileID: 4908233667435714686, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: gameEnding
+      value: 
+      objectReference: {fileID: 459728940}
     - target: {fileID: 5137004586402551950, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: player
@@ -5858,7 +5973,7 @@ PrefabInstance:
     - target: {fileID: 5248091208905549564, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.3
+      value: -2.15
       objectReference: {fileID: 0}
     - target: {fileID: 5248091208905549564, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
@@ -5868,7 +5983,7 @@ PrefabInstance:
     - target: {fileID: 5248091208905549564, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.1
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 5248091208905549564, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
@@ -5915,6 +6030,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 5248091208905784028, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
         type: 3}
       propertyPath: waypoints.Array.size
@@ -5935,5 +6055,15 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 869485853}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: wanderRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340033720863897336, guid: 916e59c8fca4e974382a6614b7f597f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2097583595}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916e59c8fca4e974382a6614b7f597f9, type: 3}

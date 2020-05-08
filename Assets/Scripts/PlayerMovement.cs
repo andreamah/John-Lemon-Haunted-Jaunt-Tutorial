@@ -47,11 +47,11 @@ public class PlayerMovement : MonoBehaviour
         {
             m_AudioSource.Stop ();
         }
-        
+
     }
     void OnAnimatorMove ()
     {
-        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+        m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude*2.0f);
         m_Rigidbody.MoveRotation (m_Rotation);
     }
 }
