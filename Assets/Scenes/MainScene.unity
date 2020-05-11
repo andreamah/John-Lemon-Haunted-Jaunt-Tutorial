@@ -510,7 +510,7 @@ PrefabInstance:
     - target: {fileID: 4545818157281890547, guid: 23b5979d6c769444ab48bbe4e14a3306,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.26
+      value: -10.66
       objectReference: {fileID: 0}
     - target: {fileID: 4545818157281890547, guid: 23b5979d6c769444ab48bbe4e14a3306,
         type: 3}
@@ -1685,8 +1685,8 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
@@ -2236,7 +2236,7 @@ PrefabInstance:
     - target: {fileID: 4545818157281890547, guid: 23b5979d6c769444ab48bbe4e14a3306,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.82
+      value: -4.47
       objectReference: {fileID: 0}
     - target: {fileID: 4545818157281890547, guid: 23b5979d6c769444ab48bbe4e14a3306,
         type: 3}
@@ -2246,7 +2246,7 @@ PrefabInstance:
     - target: {fileID: 4545818157281890547, guid: 23b5979d6c769444ab48bbe4e14a3306,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.86
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 4545818157281890547, guid: 23b5979d6c769444ab48bbe4e14a3306,
         type: 3}
