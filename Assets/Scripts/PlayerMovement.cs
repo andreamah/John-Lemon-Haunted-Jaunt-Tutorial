@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody projectile;
     public AudioSource m_AudioSource;
     public List<GameObject> collectables = new List<GameObject>();
+    public int projectileMag = 500;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +59,9 @@ public class PlayerMovement : MonoBehaviour
     void shootProjectile() {
         if (collectables.Count>0) {
             Vector3 forwardLook = m_Rotation * new Vector3(0.0f,0.0f,1);
-            Rigidbody p = Instantiate(projectile, transform.position+Vector3.up+forwardLook*0.5f, Quaternion.identity);
-            p.AddForce(forwardLook * 500);
+            // instantiate it slightly forward of the player's position and upwards a unit
+            Rigidbody proj = Instantiate(projectile, transform.position+(forwardLook*0.5f)+Vector3.up, Quaternion.identity);
+            proj.AddForce(forwardLook * projectileMag);
             collectables[0].SetActive(false);
             collectables.RemoveAt(0);
         }

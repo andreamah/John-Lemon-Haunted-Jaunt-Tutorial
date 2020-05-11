@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Projectile : MonoBehaviour
 {
-
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "wall")

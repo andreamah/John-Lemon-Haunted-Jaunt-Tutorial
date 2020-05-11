@@ -12,7 +12,8 @@ public class WaypointPatrol : MonoBehaviour
     public Transform projectile; 
     public Collider selfCollider;
     public GameEnding gameEnding;
-
+    public float ghostMinSpeed = 1.4f;
+    public float ghostMaxSpeed = 2.4f;
     int m_CurrentWaypointIndex;
     bool m_Detected;
     bool playerCaught = false;
@@ -95,11 +96,11 @@ public class WaypointPatrol : MonoBehaviour
         Vector3 newPos;
         if (chasing) {
             exclaim.gameObject.SetActive(true);
-            navMeshAgent.speed = 2.4f;
+            navMeshAgent.speed = ghostMaxSpeed;
             newPos = player.position;
         } else {
             exclaim.gameObject.SetActive(false);
-            navMeshAgent.speed = 1.4f;
+            navMeshAgent.speed = ghostMinSpeed;
             newPos = RandomNavSphere(transform.position, wanderRadius, -1);
         }
         navMeshAgent.SetDestination(newPos);

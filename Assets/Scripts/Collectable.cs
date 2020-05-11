@@ -6,9 +6,11 @@ using UnityEngine.AI;
 public class Collectable : MonoBehaviour
 {
     public Transform player;
-    public bool is_collected = false;
     public NavMeshAgent navMeshAgent;
     public PlayerMovement playerMovement;
+    
+    bool is_collected = false;
+    
     void Start() {
         navMeshAgent.SetDestination (transform.position);
     }
