@@ -7,25 +7,41 @@ public class WaypointPatrol : MonoBehaviour
 {
     public float wanderRadius;
     public NavMeshAgent navMeshAgent;
-    // public Transform[] waypoints;
     public Transform player; 
     public Transform exclaim;
+    public Transform projectile; 
+    public Collider selfCollider;
+    public GameEnding gameEnding;
 
     int m_CurrentWaypointIndex;
-    public bool m_Detected;
+    bool m_Detected;
+    bool playerCaught = false;
+    public bool chasing = false;
+
     void Start ()
     {
-        // navMeshAgent.SetDestination (waypoints[0].position);
         exclaim.gameObject.SetActive(false);
+        
+        Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+        navMeshAgent.SetDestination(newPos);
     }
 
+    // if the player collides with the ghost, trigger the end screen, even
+    // if the player if out of the ghost's line of sight
+    void OnCollisionEnter(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            if (contact.thisCollider == selfCollider && contact.otherCollider.transform == player){
+                playerCaught = true;
+            }
+        }
+    }
     void OnTriggerEnter (Collider other)
     {
         if (other.transform == player)
         {
             m_Detected = true;
-            exclaim.gameObject.SetActive(true);
-            navMeshAgent.speed *= 1.5f;
         }
     }
 
@@ -34,36 +50,73 @@ public class WaypointPatrol : MonoBehaviour
         if (other.transform == player)
         {
             m_Detected = false;
-            exclaim.gameObject.SetActive(false);
-            navMeshAgent.speed /= 1.5f;
         }
     }
 
     void Update ()
     {
-        if(navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
-        {
-            Vector3 newPos;
+        if (playerCaught) {
+            gameEnding.CaughtPlayer ();
+        } else {
+            bool donePath = (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance);
+            // if you've been detected, only
             if (m_Detected) {
-                newPos = player.position;
-            } else {
-                newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+                RaycastHit raycastHit;
+                Vector3 direction = player.position - transform.position;
+                Ray ray = new Ray(transform.position, direction);
+                
+                bool new_chasing;
+                if(Physics.Raycast(ray, out raycastHit) && (raycastHit.collider.transform == player))
+                {
+                    new_chasing = true;
+                } else {
+                    // in range, but there is a wall separating
+                    new_chasing = false;
+                }
+                
+                if ((new_chasing && !chasing) || donePath) {
+                    //either done the current path or going from not chasing to to chasing
+                    chasing = new_chasing;
+                    UpdateGamePos();
+                }
+                chasing = new_chasing;
+
+            } else if(donePath)
+            {
+                // if nothing is detected, just proceed normally
+                chasing = false;
+                UpdateGamePos();
+                
             }
-            navMeshAgent.SetDestination (newPos);
-            
         }
     }
 
-    public static Vector3 RandomNavSphere (Vector3 origin, float distance, int layermask) {
-            Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
-           
-            randomDirection += origin;
-           
-            NavMeshHit navHit;
-           
-            NavMesh.SamplePosition (randomDirection, out navHit, distance, layermask);
-           
-            return navHit.position;
+    void UpdateGamePos() {
+        Vector3 newPos;
+        if (chasing) {
+            exclaim.gameObject.SetActive(true);
+            navMeshAgent.speed = 2.4f;
+            newPos = player.position;
+        } else {
+            exclaim.gameObject.SetActive(false);
+            navMeshAgent.speed = 1.4f;
+            newPos = RandomNavSphere(transform.position, wanderRadius, -1);
         }
+        navMeshAgent.SetDestination(newPos);
+    }
 
+    public static Vector3 RandomNavSphere (Vector3 origin, float distance, int layermask) {
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
+        
+        randomDirection += origin;
+        
+        NavMeshHit navHit;
+        
+        NavMesh.SamplePosition (randomDirection, out navHit, distance, layermask);
+        
+        return navHit.position;
+    }
+
+        
+    
 }

@@ -8,10 +8,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     public float turnSpeed =20f;
     Rigidbody m_Rigidbody;
-    Quaternion m_Rotation = Quaternion.identity;
-    
+    public Quaternion m_Rotation = Quaternion.identity;
+    // public Projectile proj;
+    public Rigidbody projectile;
     public AudioSource m_AudioSource;
-
+    public List<GameObject> collectables = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool ("IsWalking", isWalking);
 
+        
+        if (Input.GetMouseButtonDown(0))
+            shootProjectile();
+
         Vector3 desiredForward = Vector3.RotateTowards (transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation (desiredForward);
           
@@ -46,6 +51,17 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             m_AudioSource.Stop ();
+        }
+
+    }
+
+    void shootProjectile() {
+        if (collectables.Count>0) {
+            Vector3 forwardLook = m_Rotation * new Vector3(0.0f,0.0f,1);
+            Rigidbody p = Instantiate(projectile, transform.position+Vector3.up+forwardLook*0.5f, Quaternion.identity);
+            p.AddForce(forwardLook * 500);
+            collectables[0].SetActive(false);
+            collectables.RemoveAt(0);
         }
 
     }

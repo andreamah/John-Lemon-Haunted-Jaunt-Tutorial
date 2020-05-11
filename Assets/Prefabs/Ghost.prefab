@@ -861,9 +861,10 @@ GameObject:
   - component: {fileID: 6340033720863897336}
   - component: {fileID: 4593158036268541334}
   - component: {fileID: 6705452138019950148}
+  - component: {fileID: 1908702746047928827}
   m_Layer: 0
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -955,11 +956,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51225ebec70059948aa9f30b5000c010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 0
+  wanderRadius: 5
   navMeshAgent: {fileID: 0}
   player: {fileID: 0}
   exclaim: {fileID: 6199956663982301086}
-  m_Detected: 0
+  selfCollider: {fileID: 1908702746047928827}
+  gameEnding: {fileID: 0}
+  chasing: 0
 --- !u!82 &4593158036268541334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1067,7 +1070,21 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 10
+  m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!136 &1908702746047928827
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248091208905784028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 1.2
+  m_Direction: 1
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1 &5248091208905784030
 GameObject:
@@ -1175,7 +1192,7 @@ PrefabInstance:
     - target: {fileID: 1090259615400427600, guid: 4d068053d8165054da50c3c16d204a20,
         type: 3}
       propertyPath: m_Height
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2995249061490017222, guid: 4d068053d8165054da50c3c16d204a20,
         type: 3}
